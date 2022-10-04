@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    const _arrayNums = nums;
+    let _sortedArray = _arrayNums.sort();
+    let _nextNum;
+    let _currentNum;
+
+    if( _sortedArray.length ==1) {
+        return _sortedArray[0];
+    }
+    else {
+        for (let i=0; i<_sortedArray.length; i+2) {
+        
+            _currentNum = _sortedArray[i];
+            _nextNum = _sortedArray[i+1];
+            if ((_nextNum!=_currentNum)) {
+                return _currentNum;
+            }
+
+        }
+    }
+    
+};
